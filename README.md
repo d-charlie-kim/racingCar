@@ -1,25 +1,62 @@
 <p align="middle" >
   <img width="200px;" src="https://github.com/woowacourse/javascript-racingcar-precourse/blob/main/images/racingcar_icon.png?raw=true"/>
 </p>
-<h1 align="middle">자동차 경주 게임</h1>
+<h2 align="middle">자동차 경주 게임</h2>
+<h3 align="middle">HTML / CSS / JavaScript 활용 연습 Part05</h3>
+<p align="middle">DEMO : </p>
+<p align="middle">
+  <img src="https://img.shields.io/badge/version-1.0.0-blue?style=flat-square" alt="template version"/>
+  <img src="https://img.shields.io/badge/language-html-red.svg?style=flat-square"/>
+  <img src="https://img.shields.io/badge/language-css-blue.svg?style=flat-square"/>
+  <img src="https://img.shields.io/badge/language-js-yellow.svg?style=flat-square"/>
+  <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square"/>
+</p>
+
 
 ## 🔍 진행방식
-
-- 미션은 **기능 요구사항, 프로그래밍 요구사항, 과제 진행 요구사항** 세 가지로 구성되어 있다.
-- 세 개의 요구사항을 만족하기 위해 노력한다. 특히 기능을 구현하기 전에 기능 목록을 만들고, 기능 단위로 커밋 하는 방식으로 진행한다.
+- 기능을 구현하기 전에 기능 목록을 만들고, 기능 단위로 커밋 하는 방식으로 진행한다.
 
 ---
 ## 🎯 기능 요구사항
 초간단 자동차 경주 게임을 구현한다.
 
-- 주어진 횟수 동안 n 대의 자동차는 전진 또는 멈출 수 있다.
-- 자동차에 이름을 부여할 수 있다. 전진하는 자동차를 출력할 때 자동차 이름을 같이 출력한다.
-- 자동차 이름은 쉼표(,)를 기준으로 구분하며 이름은 5자 이하만 가능하다.
-- 사용자는 몇 번의 이동을 할 것인지를 입력할 수 있어야 한다.
-- 전진하는 조건은 0에서 9 사이에서 무작위 값을 구한 후 무작위 값이 4 이상일 경우이다.
-- 자동차 경주 게임을 완료한 후 누가 우승했는지를 알려준다. 우승자는 한 명 이상일 수 있다.
-- 우승자가 여러 명일 경우 쉼표(,)를 이용하여 구분한다.
-- 사용자가 잘못된 입력 값을 작성한 경우 `alert`을 이용해 메시지를 보여주고, 다시 입력할 수 있게 한다.
+- [ ] 주어진 횟수 동안 n 대의 자동차는 전진 또는 멈출 수 있다.
+- [ ] 자동차에 이름을 부여할 수 있다. 전진하는 자동차를 출력할 때 자동차 이름을 같이 출력한다.
+- [ ] 자동차 이름은 쉼표(,)를 기준으로 구분하며 이름은 5자 이하만 가능하다.
+- [ ] 사용자는 몇 번의 이동을 할 것인지를 입력할 수 있어야 한다.
+- [ ] 전진하는 조건은 0에서 9 사이에서 무작위 값을 구한 후 무작위 값이 4 이상일 경우이다.
+- [ ] 자동차 경주 게임을 완료한 후 누가 우승했는지를 알려준다. 우승자는 한 명 이상일 수 있다.
+- [ ] 우승자가 여러 명일 경우 쉼표(,)를 이용하여 구분한다.
+- [ ] 사용자가 잘못된 입력 값을 작성한 경우 `alert`을 이용해 메시지를 보여주고, 다시 입력할 수 있게 한다.
+
+## 💟 기능 구현 목록
+
+### ▶️ 기본 기능
+
+- [ ] 자동차 이름을 입력 받는다.
+- [ ] 몇 번의 이동을 할 것인지(이동 횟수) 입력 받는다.
+- [ ] `Math.random()`함수를 활용해서 전진할지 말지를 결정한다.
+
+### ▶️ 출력 기능
+
+- [ ] 이동 횟수마다 자동차별로 이동 거리를 표시한다.
+- [ ] 자동차 이름은 아스키코드 순서로 정렬하여 출력한다.
+- [ ] 이동 거리를 종합해서 최종 우승자를 표시한다. (한명이 아닐 수 있다.)
+
+### ▶️ 입력 유효성 검사
+
+- [ ] 자동차 이름은 5자 이하만 가능하다.
+- [ ] 자동차 이름은 쉼표(,)로 구분된다.
+- [ ] 자동차 이름은 최대 10개까지만 입력 받는다.
+- [ ] 이동 횟수는 숫자만 입력 받는다.
+- [ ] 이동 횟수는 최대 20까지만 입력 받는다.
+- [ ] 잘못된 입력 값을 작성한 경우 `alert`를 이용해 메시지를 보여준다.
+
+### ▶️ 추가 기능
+
+- [ ] (매번 입력하기 귀찮으니) 자동 입력 버튼
+- [ ] 이동 횟수도 자동으로 입력해주는 버튼
+- [ ] 입력을 지워주는 `reset` 버튼
 
 <br>
 
@@ -45,16 +82,7 @@ class Car {
 }
 ```
 
-### 라이브러리
-- 전진하는 조건을 판단하기 위한 랜덤 값은 [`MissionUtils` 라이브러리](https://github.com/woowacourse-projects/javascript-mission-utils#mission-utils)의 `Random.pickNumberInRange`를 사용해 구한다.
-  - `MissionUtils` 라이브러리 스크립트는 `index.html`에 이미 포함되어 전역 객체에 추가되어 있으므로, 따로 `import` 하지 않아도 구현 코드 어디에서든 사용할 수 있다.
-
-  ```javascript
-  // ex)
-  const randomNumber = Random.pickNumberInRange(0, 9);
-  ```
-
-### 공통 요구사항
+## 💭 기본 요구사항
 
 - 외부 라이브러리(jQuery, Lodash 등)를 사용하지 않고, 순수 Vanilla JS로만 구현한다.
 - **[자바스크립트 코드 컨벤션](https://github.com/woowacourse/woowacourse-docs/tree/feature/styleguide/styleguide/javascript)을 지키면서 프로그래밍** 한다.
@@ -73,27 +101,7 @@ class Car {
 
 <br>
 
-## 📝 과제 진행 요구사항
-
-- 미션은 [https://github.com/woowacourse/javascript-racingcar-precours](https://github.com/woowacourse/javascript-racingcar-precourse) 저장소를 fork/clone해 시작한다.
-- **기능을 구현하기 전에 구현할 기능 목록을 정리해 javascript-racingcar-precourse/docs/README.md 파일에** 추가한다.
-- **git의 commit 단위는 앞 단계에서 README.md 파일에 정리한 기능 목록 단위로 추가**한다.
-- [프리코스 과제 제출](https://github.com/woowacourse/woowacourse-docs/tree/master/precourse) 문서 절차를 따라 미션을 제출한다.
-
-## ✉️ 미션 제출 방법
-
-- 미션 구현을 완료한 후 GitHub을 통해 제출해야 한다.
-   - GitHub을 활용한 제출 방법은 [프리코스 과제 제출 문서](https://github.com/woowacourse/woowacourse-docs/tree/master/precourse) 를 참고해 제출한다.
-- GitHub에 미션을 제출한 후 [우아한테크코스 지원 플랫폼](https://apply.techcourse.co.kr) 에 접속하여 프리코스 과제를 제출한다.
-   - 자세한 방법은 [링크](https://github.com/woowacourse/woowacourse-docs/tree/master/precourse#제출-가이드) 를 참고한다.
-   - **Pull Request만 보내고, 지원 플랫폼에서 과제를 제출하지 않으면 최종 제출하지 않은 것으로 처리되니 주의한다.**
-
-
-### 🚨 과제 제출 전 체크리스트 - 0점 방지를 위한 주의사항
-- 요구사항에 명시된 출력값 형식을 지키지 않을 경우 기능 구현을 모두 정상적으로 했더라도 0점으로 처리된다.
-- 기능 구현을 완료한 뒤 아래 가이드에 따라 테스트를 실행했을 때 모든 테스트가 성공하는 지 확인한다. **테스트가 실패할 경우 0점으로 처리되므로, 반드시 확인 후 제출한다.**
-
-### ✔️ 테스트 실행 가이드
+## ✔️ 테스트 실행 가이드
 - 테스트 실행에 필요한 패키지 설치를 위해 `Node.js` 버전 `14` 이상이 필요하다. 
 - 다음 명령어를 입력해 패키지를 설치한다.     
 ```bash
