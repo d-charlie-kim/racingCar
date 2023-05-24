@@ -15,6 +15,9 @@ $carNamesButton.addEventListener('click', () => {
 
 	cars.length = 0;
 	let carNameStr = $carNamesInput.value;
+	if (!validateCars(carNameStr))
+		return (alert('올바른 자동차 이름을 입력해주세요.'));
+
 	carNameStr.split(',').forEach(el => {
 		cars.push(new Car(el));
 	});
@@ -29,11 +32,23 @@ $carNamesButton.addEventListener('click', () => {
 })
 
 $racingCountButton.addEventListener('click', () => {
+	if (cars.length === 0)
+		return (alert('자동차 이름을 먼저 입력해주세요.'));
+	if (!validateCount($racingCountInput.value))
+		return (alert('올바른 횟수를 입력해주세요.'));
+
 	const $forDel = document.querySelectorAll('.a11y-hidden');
 	$forDel.forEach(el => {
 		el.classList.remove('a11y-hidden');
 		el.className = 'a11y';
 	})
+
+	const $result = document.getElementById('result');
+	$result.innerHTML = '';
+	cars.forEach((car) => {
+		car.resetDistance();
+	})
+
 	for (let i = 0; i < parseInt($racingCountInput.value); i++) {
 		cars.forEach((car) => {
 			if (goOrStop())
@@ -105,4 +120,18 @@ function clearAll() {
 	$winner.textContent = '(우승자)';
 	$result.removeChild();
 	cars.length = 0;
+}
+
+function validateCount(count) {
+	if (count < 1 || count != parseInt(count))
+		return false;
+	return true;
+}
+
+function validateCars(cars) {
+	cars.split(',').forEach((el) => {
+		if (el.length > 5)
+			return false;
+	})
+	return true;
 }

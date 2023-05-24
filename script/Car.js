@@ -18,6 +18,10 @@ class Car {
 	goForward() {
 		this.#distance += 1;
 	}
+
+	resetDistance() {
+		this.#distance = 0;
+	}
 }
 
 export default Car;
