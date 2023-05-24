@@ -128,10 +128,11 @@ function validateCount(count) {
 	return true;
 }
 
-function validateCars(cars) {
-	cars.split(',').forEach((el) => {
-		if (el.length > 5)
+function validateCars(carNames) {
+	carNames = carNames.split(',');
+	for (const x of carNames) {
+		if (x.length > 5)
 			return false;
-	})
+	}
 	return true;
 }
