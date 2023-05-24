@@ -12,7 +12,7 @@ $carNamesButton.addEventListener('click', () => {
 	if (forDel) {
 		forDel.remove();
 	}
-		
+
 	cars.length = 0;
 	let carNameStr = $carNamesInput.value;
 	carNameStr.split(',').forEach(el => {
@@ -32,6 +32,7 @@ $racingCountButton.addEventListener('click', () => {
 	const $forDel = document.querySelectorAll('.a11y-hidden');
 	$forDel.forEach(el => {
 		el.classList.remove('a11y-hidden');
+		el.className = 'a11y';
 	})
 	for (let i = 0; i < parseInt($racingCountInput.value); i++) {
 		cars.forEach((car) => {
@@ -41,6 +42,7 @@ $racingCountButton.addEventListener('click', () => {
 		render();
 	}
 	winner();
+	$racingCountInput.value = '';
 })
 
 function goOrStop() {
@@ -70,6 +72,7 @@ function render() {
 
 function winner() {
 	const $winner = document.getElementById('racing-winners');
+	const resetButton = document.createElement('button');
 	let winners = "";
 	let best = 0;
 	cars.forEach((car) => {
@@ -81,5 +84,25 @@ function winner() {
 			winners += car.getName() + ', ';		
 		}
 	})
-	$winner.textContent = winners.slice(0, winners.length - 2);
+	$winner.textContent = winners.slice(0, winners.length - 2) + ' -> ';
+
+	resetButton.type = 'button';
+	resetButton.textContent = 'RESET';
+	$winner.appendChild(resetButton);
+	resetButton.addEventListener('click', clearAll);
+}
+
+function clearAll() {
+	const $carNames = document.querySelector('.carNamesList');
+	const $headingFour = document.querySelectorAll('.a11y');
+	const $winner = document.getElementById('racing-winners');
+	const $result = document.getElementById('result');
+
+	$carNames.remove();
+	$headingFour.forEach((el) => {
+		el.className = 'a11y-hidden';
+	})
+	$winner.textContent = '(우승자)';
+	$result.removeChild();
+	cars.length = 0;
 }

@@ -3,7 +3,7 @@
 </p>
 <h2 align="middle">자동차 경주 게임</h2>
 <h3 align="middle">HTML / CSS / JavaScript 활용 연습 Part05</h3>
-<p align="middle">DEMO : </p>
+<p align="middle">DEMO : https://d-charlie-kim.github.io/racingCar/</p>
 <p align="middle">
   <img src="https://img.shields.io/badge/version-1.0.0-blue?style=flat-square" alt="template version"/>
   <img src="https://img.shields.io/badge/language-html-red.svg?style=flat-square"/>
@@ -42,7 +42,6 @@
 ### ▶️ 출력 기능
 
 - [x] 이동 횟수마다 자동차별로 이동 거리를 표시한다.
-- [ ] 자동차 이름은 아스키코드 순서로 정렬하여 출력한다.
 - [x] 이동 거리를 종합해서 최종 우승자를 표시한다. (한명이 아닐 수 있다.)
 
 ### ▶️ 입력 유효성 검사
